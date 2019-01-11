@@ -5,10 +5,9 @@
 
 import os
 import time
-import wda
 import pytest
-from pytest import mark
 
+import wda
 
 bundle_id = 'com.netease.cloudmusic'
 
@@ -85,3 +84,10 @@ def test_my_music():
     s(name=u'本地音乐').tap()
     assert s(name=u'管理').wait()
     s(name=u'播放全部').tap()
+
+
+if __name__ == '__main__':
+    setup_function()
+    test_discover_music()
+    test_my_music()
+    teardown_function()
